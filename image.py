@@ -1,21 +1,9 @@
-"""
-Python Image Representation (modified from MIT 6.865)
-
-YouTube Kylie Ying: https://www.youtube.com/ycubed 
-Twitch KylieYing: https://www.twitch.tv/kylieying 
-Twitter @kylieyying: https://twitter.com/kylieyying 
-Instagram @kylieyying: https://www.instagram.com/kylieyying/ 
-Website: https://www.kylieying.com
-Github: https://www.github.com/kying18 
-Programmer Beast Mode Spotify playlist: https://open.spotify.com/playlist/4Akns5EUb3gzmlXIdsJkPs?si=qGc4ubKRRYmPHAJAIrCxVQ 
-"""
-
 import numpy as np
 import png
 
 class Image:
     def __init__(self, x_pixels=0, y_pixels=0, num_channels=0, filename=''):
-        # you need to input either filename OR x_pixels, y_pixels, and num_channels
+        
         self.input_path = 'input/'
         self.output_path = 'output/'
         if x_pixels and y_pixels and num_channels:
@@ -51,7 +39,7 @@ class Image:
         with open(self.output_path + output_file_name, 'wb') as f:
             writer.write(f, 255*(im**(1/gamma)))
 
-        self.array.resize(y, x, 3)  # we mutated the method in the first step of the function
+        self.array.resize(y, x, 3)  # mutated the method in the first step of the function
         
 
 if __name__ == '__main__':
